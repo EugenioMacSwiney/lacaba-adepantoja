@@ -6,13 +6,12 @@
     <title>La Cabaña de Pantoja - Restaurante de Mariscos</title>
     <meta name="description" content="Restaurante de mariscos La Cabaña de Pantoja. Disfruta de los mejores mariscos frescos y platillos tradicionales del mar en un ambiente familiar." />
     <link rel="stylesheet" href="../css/main.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-background text-text-primary">
-<!-- Navigation -->
 <nav class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-border/50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-16">
-            <!-- Logo -->
             <div class="flex-shrink-0">
                 <div class="flex items-center">
                     <img src="../assets/images/LOGO.png" alt="La Cabaña de Pantoja" class="h-12 w-12 rounded-full border-2 border-primary mr-3" />
@@ -20,7 +19,6 @@
                 </div>
             </div>
             
-            <!-- Desktop Navigation -->
             <div class="hidden md:block">
                 <div class="ml-10 flex items-baseline space-x-6">
                     <a href="homepage.html" class="bg-primary text-white px-4 py-2 rounded-md hover:bg-accent transition-micro font-medium">HOME</a>
@@ -35,7 +33,6 @@
                 </div>
             </div>
             
-            <!-- Mobile menu button -->
             <div class="md:hidden">
                 <button id="mobile-menu-button" class="text-primary hover:text-accent transition-micro">
                     <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -46,7 +43,6 @@
         </div>
     </div>
     
-    <!-- Mobile Navigation Menu -->
     <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-border">
         <div class="px-2 pt-2 pb-3 space-y-1">
             <a href="homepage.html" class="block px-3 py-2 bg-primary text-white rounded-md mx-3 text-center font-medium">HOME</a>
@@ -62,10 +58,8 @@
     </div>
 </nav>
 
-    <!-- Hero Section -->
     <section class="relative h-screen overflow-hidden">
         <div id="hero-gallery" class="relative w-full h-full">
-            <!-- Gallery Images -->
             <div class="gallery-slide absolute inset-0 opacity-100 transition-opacity duration-1000">
                 <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?q=80&w=2940&auto=format&fit=crop" alt="Mariscos frescos de La Cabaña de Pantoja" class="w-full h-full object-cover" loading="eager" onerror="this.src='https://images.pexels.com/photos/725997/pexels-photo-725997.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
             </div>
@@ -80,20 +74,61 @@
             </div>
         </div>
         
-        <!-- Hero Overlay Content -->
         <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
-            <div class="text-center text-white px-4">
-                <h1 class="font-serif text-5xl md:text-7xl font-bold mb-4 drop-shadow-lg">La Cabaña de Pantoja</h1>
-                <p class="text-xl md:text-2xl font-light tracking-wide drop-shadow-md mb-8">Los mejores sabores del mar en un ambiente familiar</p>
-                <div class="mt-8">
+            <div class="text-center text-white px-4 flex flex-col items-center lg:flex-row lg:justify-center lg:items-start lg:gap-12">
+                <div class="mb-8 lg:mb-0 lg:mt-24">
+                    <h1 class="font-serif text-5xl md:text-7xl font-bold mb-4 drop-shadow-lg">La Cabaña de Pantoja</h1>
+                    <p class="text-xl md:text-2xl font-light tracking-wide drop-shadow-md mb-8">Los mejores sabores del mar en un ambiente familiar</p>
                     <a href="#menu" class="inline-block bg-primary text-white px-8 py-3 rounded-md hover:bg-accent transition-micro font-medium text-lg">
                         Ver Nuestro Menú
                     </a>
                 </div>
+                
+                <div class="bg-white p-6 md:p-8 rounded-lg restaurant-shadow w-full max-w-sm">
+                    <h2 class="font-serif text-2xl font-bold text-primary mb-6">Reserva tu mesa</h2>
+                    <form>
+                        <div class="mb-4">
+                            <label for="fecha" class="block text-sm font-medium text-gray-700 mb-2">Fecha</label>
+                            <div class="relative">
+                                <input type="date" id="fecha" name="fecha" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-micro" />
+                                <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                                    <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <label for="hora" class="block text-sm font-medium text-gray-700 mb-2">Hora</label>
+                            <div class="relative">
+                                <input type="time" id="hora" name="hora" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-micro" />
+                                <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                                    <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label for="personas" class="block text-sm font-medium text-gray-700 mb-2">Personas</label>
+                            <div class="relative">
+                                <input type="number" id="personas" name="personas" min="1" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-micro" />
+                                <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+                                    <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="w-full bg-primary/70 text-white font-bold py-3 rounded-md hover:bg-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+                            Buscar mesa
+                        </button>
+                        <p class="text-center text-sm text-gray-500 mt-4">Tu solicitud fue enviada (demo).</p>
+                    </form>
+                </div>
             </div>
         </div>
         
-        <!-- Gallery Navigation Dots -->
         <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3">
             <button class="gallery-dot w-3 h-3 rounded-full bg-white/70 hover:bg-white transition-micro" data-slide="0"></button>
             <button class="gallery-dot w-3 h-3 rounded-full bg-white/40 hover:bg-white transition-micro" data-slide="1"></button>
@@ -102,16 +137,13 @@
         </div>
     </section>
 
-    <!-- Menu Section -->
     <section id="menu" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="font-serif text-5xl md:text-6xl font-bold text-primary mb-8">MENÚ</h2>
             </div>
             
-            <!-- Three Column Menu Layout -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                <!-- Column 1 - Entradas y Sopas -->
                 <div class="space-y-8">
                     <h3 class="font-serif text-2xl font-bold text-primary text-center mb-6">Entradas & Sopas</h3>
                     
@@ -126,7 +158,7 @@
                                 <p class="text-sm text-gray-600">Pescado fresco marinado en limón con cebolla, cilantro y ají</p>
                             </div>
                             <div class="ml-4">
-                                <span class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">$</span>
+                                <span class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">$100</span>
                             </div>
                         </div>
                     </div>
@@ -142,7 +174,7 @@
                                 <p class="text-sm text-gray-600">Sopa tradicional con variedad de mariscos del día</p>
                             </div>
                             <div class="ml-4">
-                                <span class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">$</span>
+                                <span class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">$120</span>
                             </div>
                         </div>
                     </div>
@@ -158,13 +190,12 @@
                                 <p class="text-sm text-gray-600">Camarones frescos salteados con ajo y especias</p>
                             </div>
                             <div class="ml-4">
-                                <span class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">$</span>
+                                <span class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">$130</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Column 2 - Platos Principales -->
                 <div class="space-y-8">
                     <h3 class="font-serif text-2xl font-bold text-primary text-center mb-6">Platos Principales</h3>
                     
@@ -179,7 +210,7 @@
                                 <p class="text-sm text-gray-600">Tradicional paella con langostinos, mejillones y calamares</p>
                             </div>
                             <div class="ml-4">
-                                <span class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">$</span>
+                                <span class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">$125</span>
                             </div>
                         </div>
                     </div>
@@ -195,7 +226,7 @@
                                 <p class="text-sm text-gray-600">Pescado fresco del día con vegetales y salsa especial</p>
                             </div>
                             <div class="ml-4">
-                                <span class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">$</span>
+                                <span class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">$114</span>
                             </div>
                         </div>
                     </div>
@@ -211,13 +242,12 @@
                                 <p class="text-sm text-gray-600">Langosta fresca con salsa cremosa gratinada</p>
                             </div>
                             <div class="ml-4">
-                                <span class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">$</span>
+                                <span class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">$200</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Column 3 - Bebidas y Postres -->
                 <div class="space-y-8">
                     <h3 class="font-serif text-2xl font-bold text-primary text-center mb-6">Bebidas & Postres</h3>
                     
@@ -232,7 +262,7 @@
                                 <p class="text-sm text-gray-600">Refrescante agua de coco natural servida en su cáscara</p>
                             </div>
                             <div class="ml-4">
-                                <span class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">$</span>
+                                <span class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">$30</span>
                             </div>
                         </div>
                     </div>
@@ -248,7 +278,7 @@
                                 <p class="text-sm text-gray-600">Bebida refrescante con limón y trozos de coco</p>
                             </div>
                             <div class="ml-4">
-                                <span class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">$</span>
+                                <span class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">$60</span>
                             </div>
                         </div>
                     </div>
@@ -264,7 +294,7 @@
                                 <p class="text-sm text-gray-600">Postre tradicional con sabor tropical y caramelo</p>
                             </div>
                             <div class="ml-4">
-                                <span class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">$</span>
+                                <span class="bg-primary text-white rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold">$90</span>
                             </div>
                         </div>
                     </div>
@@ -273,7 +303,6 @@
         </div>
     </section>
 
-    <!-- Testimonios Section -->
     <section id="testimonials" class="py-20 bg-surface">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -284,7 +313,6 @@
             <div class="relative">
                 <div id="testimonials-carousel" class="overflow-hidden">
                     <div class="flex transition-transform duration-500 ease-out" id="testimonials-track">
-                        <!-- Testimonial 1 -->
                         <div class="w-full flex-shrink-0">
                             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                                 <div class="order-2 lg:order-1">
@@ -328,7 +356,6 @@
                             </div>
                         </div>
                         
-                        <!-- Testimonial 2 -->
                         <div class="w-full flex-shrink-0">
                             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                                 <div class="order-2 lg:order-1">
@@ -374,7 +401,6 @@
                     </div>
                 </div>
                 
-                <!-- Carousel Navigation -->
                 <div class="flex justify-center mt-8 space-x-3">
                     <button class="testimonial-dot w-3 h-3 rounded-full bg-primary transition-micro" data-slide="0"></button>
                     <button class="testimonial-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-primary transition-micro" data-slide="1"></button>
@@ -383,7 +409,6 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -420,11 +445,9 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-primary text-white py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                <!-- Brand -->
                 <div class="md:col-span-2">
                     <h3 class="font-serif text-3xl font-bold mb-4">La Cabaña de Pantoja</h3>
                     <p class="text-orange-100 mb-6 max-w-md">Restaurante familiar especializado en mariscos frescos y platillos tradicionales del mar. Llevamos más de 25 años deleitando paladares con los mejores sabores marinos.</p>
@@ -447,7 +470,6 @@
                     </div>
                 </div>
                 
-                <!-- Links -->
                 <div>
                     <h4 class="font-serif text-xl font-bold mb-4 text-white">Enlaces Rápidos</h4>
                     <ul class="space-y-2">
@@ -459,7 +481,6 @@
                     </ul>
                 </div>
                 
-                <!-- Contact Info -->
                 <div id="contact">
                     <h4 class="font-serif text-xl font-bold mb-4 text-white">Contacto</h4>
                     <div class="space-y-3">
@@ -480,7 +501,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                             </svg>
-                            <span class="text-orange-200">Malecón Puerto Marítimo<br />Cartagena, Colombia</span>
+                            <span class="text-orange-200">Carretera Nacional<br />El Limón, Tamaulipas</span>
                         </div>
                         <div class="mt-4">
                             <div class="inline-flex items-center bg-success/20 text-green-300 px-3 py-1 rounded-full text-sm">
@@ -498,9 +519,7 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
     <script>
-        // Mobile Menu Toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         
@@ -508,7 +527,6 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Hero Gallery Rotation
         let currentSlide = 0;
         const slides = document.querySelectorAll('.gallery-slide');
         const dots = document.querySelectorAll('.gallery-dot');
@@ -527,10 +545,8 @@
             showSlide(currentSlide);
         }
         
-        // Auto-rotate gallery
         setInterval(nextSlide, 5000);
         
-        // Dot navigation
         dots.forEach((dot, index) => {
             dot.addEventListener('click', () => {
                 currentSlide = index;
@@ -538,7 +554,6 @@
             });
         });
 
-        // Testimonials Carousel
         let currentTestimonial = 0;
         const testimonialTrack = document.getElementById('testimonials-track');
         const testimonialDots = document.querySelectorAll('.testimonial-dot');
@@ -555,10 +570,8 @@
             showTestimonial(currentTestimonial);
         }
         
-        // Auto-rotate testimonials
         setInterval(nextTestimonial, 8000);
         
-        // Testimonial dot navigation
         testimonialDots.forEach((dot, index) => {
             dot.addEventListener('click', () => {
                 currentTestimonial = index;
@@ -566,7 +579,6 @@
             });
         });
 
-        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
