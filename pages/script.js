@@ -1,4 +1,4 @@
-// Manejo del formulario de reserva
+
 document.addEventListener('DOMContentLoaded', function() {
     const reservationForm = document.querySelector('form');
     
@@ -6,26 +6,22 @@ document.addEventListener('DOMContentLoaded', function() {
         reservationForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Obtener datos del formulario
-            const formData = {
+                      const formData = {
                 fecha: document.getElementById('fecha').value,
                 hora: document.getElementById('hora').value,
                 personas: document.getElementById('personas').value,
                 email: document.getElementById('email').value || 'demo@ejemplo.com' // Campo de email agregado
             };
             
-            // Validar datos
             if (!formData.fecha || !formData.hora || !formData.personas) {
                 alert('Por favor, complete todos los campos obligatorios.');
                 return;
             }
             
-            // Enviar datos al servidor
             enviarReserva(formData);
         });
     }
     
-    // Agregar campo de email al formulario si no existe
     agregarCampoEmail();
 });
 
@@ -51,35 +47,30 @@ function agregarCampoEmail() {
 }
 
 function enviarReserva(formData) {
-    // Mostrar mensaje de carga
     const submitButton = document.querySelector('button[type="submit"]');
     const originalText = submitButton.textContent;
     submitButton.textContent = 'Enviando...';
     submitButton.disabled = true;
     
-    // Enviar datos al servidor (simulación)
     setTimeout(function() {
-        // Simular respuesta del servidor
-        const exito = Math.random() > 0.1; // 90% de éxito para la demo
+           const exito = Math.random() > 0.1; 
         
         if (exito) {
-            // Mostrar mensaje de éxito
+
             mostrarConfirmacion(formData);
             
-            // Enviar email de confirmación (simulación)
+ 
             enviarEmailConfirmacion(formData);
         } else {
             alert('Hubo un error al procesar su reserva. Por favor, intente nuevamente.');
         }
         
-        // Restaurar botón
         submitButton.textContent = originalText;
         submitButton.disabled = false;
     }, 2000);
 }
 
 function mostrarConfirmacion(datos) {
-    // Crear modal de confirmación
     const modal = document.createElement('div');
     modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4';
     modal.innerHTML = `
@@ -107,7 +98,6 @@ function mostrarConfirmacion(datos) {
     
     document.body.appendChild(modal);
     
-    // Cerrar modal
     document.getElementById('cerrar-modal').addEventListener('click', function() {
         document.body.removeChild(modal);
     });
@@ -119,11 +109,6 @@ function formatearFecha(fecha) {
 }
 
 function enviarEmailConfirmacion(datos) {
-    // En una implementación real, esto se haría en el servidor
     console.log('Enviando email de confirmación a:', datos.email);
     console.log('Detalles de la reserva:', datos);
-    
-    // Simulación de envío de email
-    // En producción, esto se reemplazaría con una llamada a un servicio de email
-    // como SendGrid, Mailgun, o el servicio de email del hosting
 }
