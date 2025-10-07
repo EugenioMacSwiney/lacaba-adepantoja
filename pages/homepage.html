@@ -591,18 +591,21 @@
                 }
             });
         });
-    </script><script>
+    </script>
+<script>
+// ========== SISTEMA DE CONFIRMACIÓN POR EMAIL ==========
 document.addEventListener('DOMContentLoaded', function() {
     const reservationForm = document.querySelector('form');
     
     if (reservationForm) {
         reservationForm.addEventListener('submit', function(e) {
             e.preventDefault();
-                     const formData = {
+            
+            const formData = {
                 fecha: document.getElementById('fecha').value,
                 hora: document.getElementById('hora').value,
                 personas: document.getElementById('personas').value,
-                email: document.getElementById('email').value || 'demo@ejemplo.com'
+                email: document.getElementById('email') ? document.getElementById('email').value : 'demo@ejemplo.com'
             };
             
             if (!formData.fecha || !formData.hora || !formData.personas) {
@@ -610,7 +613,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-
             enviarReserva(formData);
         });
     }
@@ -625,7 +627,7 @@ function agregarCampoEmail() {
         const emailField = document.createElement('div');
         emailField.className = 'mb-4';
         emailField.innerHTML = `
-            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email para confirmación</label>
+            <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email para confirmación *</label>
             <div class="relative">
                 <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-micro" placeholder="tu@email.com" required />
                 <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
@@ -640,7 +642,6 @@ function agregarCampoEmail() {
 }
 
 function enviarReserva(formData) {
-
     const submitButton = document.querySelector('button[type="submit"]');
     const originalText = submitButton.textContent;
     submitButton.textContent = 'Enviando...';
@@ -648,14 +649,11 @@ function enviarReserva(formData) {
     
 
     setTimeout(function() {
-
-        const exito = Math.random() > 0.1; 
+        const exito = Math.random() > 0.1;
         
         if (exito) {
-
             mostrarConfirmacion(formData);
-            
-            enviarEmailConfirmacion(formData);
+            // En producción: enviarEmailConfirmacion(formData);
         } else {
             alert('Hubo un error al procesar su reserva. Por favor, intente nuevamente.');
         }
@@ -707,8 +705,11 @@ function enviarEmailConfirmacion(datos) {
     console.log('Enviando email de confirmación a:', datos.email);
     console.log('Detalles de la reserva:', datos);
 }
-
-// FIN 
+// ========== FIN SISTEMA DE CONFIRMACIÓN POR EMAIL ==========
 </script>
+
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>
 </body>
 </html>
