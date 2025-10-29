@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmación de Reserva</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            background-color: #FF4500;
+            color: white;
+            padding: 20px;
+            border-radius: 8px 8px 0 0;
+        }
+        .content {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 0 0 8px 8px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 12px;
+            color: #666;
+        }
+        .reservation-details {
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 4px solid #FF4500;
+        }
+        .button {
+            display: inline-block;
+            background-color: #FF4500;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-template" id="confirmacion-reserva">
+        <div class="header">
+            <h1>La Cabaña de Pantoja</h1>
+            <p>Restaurante de Mariscos</p>
+        </div>
+        <div class="content">
+            <h2>¡Su reserva ha sido confirmada!</h2>
+            <p>Estimado cliente,</p>
+            <p>Hemos recibido y confirmado su reserva en <strong>La Cabaña de Pantoja</strong>. Estamos ansiosos por recibirle y ofrecerle una experiencia gastronómica inolvidable.</p>
+            
+            <div class="reservation-details">
+                <h3>Detalles de su reserva:</h3>
+                <p><strong>Fecha:</strong> {{fecha}}</p>
+                <p><strong>Hora:</strong> {{hora}}</p>
+                <p><strong>Número de personas:</strong> {{personas}}</p>
+                <p><strong>Número de reserva:</strong> {{numero_reserva}}</p>
+            </div>
+            
+            <p>Si necesita modificar o cancelar su reserva, por favor contáctenos con al menos 2 horas de anticipación.</p>
+            
+            <p><strong>Ubicación:</strong><br>
+            Carretera Nacional, El Limón, Tamaulipas<br>
+            Teléfono: +57 312 456 7890</p>
+            
+            <p>¡Esperamos verle pronto!</p>
+            <p>El equipo de La Cabaña de Pantoja</p>
+        </div>
+        <div class="footer">
+            <p>Este es un mensaje automático, por favor no responda a este email.</p>
+            <p>&copy; 2025 La Cabaña de Pantoja. Todos los derechos reservados.</p>
+        </div>
+    </div>
+</body>
+</html>
